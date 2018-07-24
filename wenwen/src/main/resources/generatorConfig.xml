@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+
+<properties resource="jdbc.properties"/>
+<!-- 数据库驱动 -->
+<classPathEntry  location="D:\workspace\mavenRepository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar" />
+  <context id="MySQLTables"  targetRuntime="MyBatis3" >
+  	<commentGenerator>
+  		<property name="suppressDate" value="true"/>
+  		<!-- 是否去掉自动生成的注释 -->
+  		<property name="suppressAllComents" value="true"/>
+  	</commentGenerator>
+  	<!-- 数据库连接的URL,用户名，密码。 -->
+    <jdbcConnection driverClass="${driverClassName}" connectionURL="${url}" userId="${username}" password="${password}" />
+    <javaTypeResolver>
+		<property name="forceBigDecimals" value="false"/>    
+    </javaTypeResolver>
+    <!-- 生成模型(model)的位置 -->
+    <javaModelGenerator targetPackage="com.wenwen.exam.model" targetProject="src/main/java" >
+    	<property name="enableSubPackages" value="true"/>
+    	<property name="trimStrings" value="true"/>
+    </javaModelGenerator> 
+    <!-- 生成映射文件的位置 -->
+    <sqlMapGenerator targetPackage="com.wenwen.exam.dao.mapper" targetProject="src/main/java" >
+   	 	<property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+    <!-- 生成DAO的位置 -->
+    <javaClientGenerator targetPackage="com.wenwen.exam.dao" targetProject="src/main/java" type="XMLMAPPER" >
+    	<property name="enableSubPackages" value="true"/>
+    </javaClientGenerator>
+     <!--<table schema="" tableName="%" />-->
+     <table tableName="user" domainObjectName="User"  enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+     	<property name="useActualColumnNames" value="false" />
+     </table>   
+  </context>
+</generatorConfiguration>
