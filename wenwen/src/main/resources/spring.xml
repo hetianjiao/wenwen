@@ -50,8 +50,7 @@
 		<property name="annotationClass" value="org.springframework.stereotype.Repository"/>  
 	</bean>
 	<!-- 对dataSource 数据源进行事务管理 -->
-	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource-ref" value="dataSource"/>
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager" p:dataSource-ref="dataSource">
 	</bean>
 	<!-- 事务管理 通知 -->
 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
@@ -75,7 +74,7 @@
 		<aop:pointcut id="serviceMethods" expression="execution(* com.wenwen.exam.service..*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods" />
 	</aop:config>
-	<!-- 配置使Spring采用CGLIB代理 -->
+	<!-- 配置使Spring采用CGLIB代理  默认为false jdk动态代理 -->
 	<aop:aspectj-autoproxy proxy-target-class="true" />
 	<!-- 启用对事务注解的支持 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />

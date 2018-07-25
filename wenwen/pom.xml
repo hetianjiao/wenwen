@@ -16,6 +16,7 @@
 		<druid.version>1.1.10</druid.version>
 		<mysql.version>8.0.11</mysql.version>
 		<jackson.version>2.9.6</jackson.version>
+		<aspectj.version>1.9.1</aspectj.version>
 	</properties>
 	<dependencies>
 		<!-- spring -->
@@ -83,7 +84,17 @@
 		    <artifactId>jackson-annotations</artifactId>
 		    <version>${jackson.version}</version>
 		</dependency>
-				
+		<!-- aop -->
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjrt</artifactId>
+		    <version>${aspectj.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.aspectj</groupId>
+		    <artifactId>aspectjweaver</artifactId>
+		    <version>${aspectj.version}</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>wenwen</finalName>
