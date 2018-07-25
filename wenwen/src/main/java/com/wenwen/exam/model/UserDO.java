@@ -5,7 +5,7 @@ import java.util.Date;
 import org.springframework.stereotype.Component;
 
 @Component
-public class User {
+public class UserDO {
 	private Long id;
 	private String username;
 	private String password;

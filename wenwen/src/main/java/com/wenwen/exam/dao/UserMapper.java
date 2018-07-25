@@ -2,19 +2,19 @@ package com.wenwen.exam.dao;
 
 import org.springframework.stereotype.Repository;
 
-import com.wenwen.exam.model.User;
+import com.wenwen.exam.model.UserDO;
 
 @Repository
 public interface UserMapper {
 	int deleteByPrimaryKey(Long id);
 
-	int insert(User record);
+	int insert(UserDO record);
 
-	int insertSelective(User record);
+	int insertSelective(UserDO record);
 
-	User selectByPrimaryKey(Long id);
+	UserDO selectByPrimaryKey(Long id);
 
-	int updateByPrimaryKeySelective(User record);
+	int updateByPrimaryKeySelective(UserDO record);
 
-	int updateByPrimaryKey(User record);
+	int updateByPrimaryKey(UserDO record);
 }

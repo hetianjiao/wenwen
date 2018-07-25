@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.wenwen.exam.model.User;
+import com.wenwen.exam.model.UserDO;
 import com.wenwen.exam.service.user.UserService;
 
 @Controller
@@ -17,7 +17,7 @@ public class UserController {
 	private UserService us;
 
 	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody User getInfo() {
+	public @ResponseBody UserDO getInfo() {
 		return us.getUser();
 	}
 
